@@ -3,3 +3,5 @@
 /.vsconfig
 /Library
 /Logs
+.vs
+obj
