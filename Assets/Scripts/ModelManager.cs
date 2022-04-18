@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 class ModelManager
 {
-    public static T GetModel<T>() where T : ModelBase
+    public static T GetModel<T>() where T : ModelBase,new()
     {
-        Type type = typeof(T);
-        return (T)InstanceManager.getInstance(type);
+        return (T)InstanceManager.Instance.getInstance<T>();
     }
 }
 

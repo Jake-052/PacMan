@@ -8,18 +8,40 @@ using System.Threading.Tasks;
 
 class InstanceManager
 {
-    public static Dictionary<Type,object> instanceMap = new Dictionary<Type, object>();
-    public static object getInstance(Type type)
+    private InstanceManager()
     {
-        if (instanceMap.ContainsKey(type))
+    }
+
+    private static InstanceManager instance;
+    public static InstanceManager Instance
+    {
+        get
         {
-            return instanceMap[type];
+            if (instance == null)
+            {
+                instance = new InstanceManager();
+            }
+            return instance;
+        }
+
+    }
+
+    private Dictionary<string, object> instanceMap = new Dictionary<string, object>();
+    public T getInstance<T>()
+    {
+        string typeName = typeof(T).FullName;
+
+        if (instanceMap.ContainsKey(typeName))
+        {
+            return (T)instanceMap[typeName];
         }
         else
         {
-            
+            T t = (T)Activator.CreateInstance(typeof(T));
+            instanceMap.Add(typeName, t);
+            return t;
         }
-        return null;
+
     }
 }
 

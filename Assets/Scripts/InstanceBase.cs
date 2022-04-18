@@ -9,21 +9,21 @@ class InstanceBase
 {
 
 
-    private InstanceBase instance;
+    //private InstanceBase instance;
 
-    public virtual InstanceBase Instance
-    {
-        get
-        {
+    //public virtual InstanceBase Instance
+    //{
+    //    get
+    //    {
 
-            if (this.instance == null)
-            {
-                this.instance = new ModelBase();
-                InstanceManager.instanceMap.Add(this.GetType(), this.instance);
-            }
+    //        if (this.instance == null)
+    //        {
+    //            this.instance = new ModelBase();
+    //            InstanceManager.instanceMap.Add(this.GetType(), this.instance);
+    //        }
 
-            return this.instance;
-        }
-    }
+    //        return this.instance;
+    //    }
+    //}
 }
 

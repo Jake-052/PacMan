@@ -7,13 +7,13 @@ class GameEntry : MonoBehaviour
 
     public void Start()
     {
-        if (mapModel==null)
+        if (mapModel == null)
         {
             Debug.Log("框架问题");
         }
         else
         {
-
+            Debug.Log("框架没问题");
         }
         Debug.Log(mapModel.t);
     }
