@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using LitJson;
 
 class GameEntry : MonoBehaviour
 {
@@ -15,7 +15,15 @@ class GameEntry : MonoBehaviour
         {
             Debug.Log("框架没问题");
         }
-        Debug.Log(mapModel.t);
+
+        for (int i = 0; i < mapModel.mapDataArray.GetLength(0); i++)
+        {
+            for (int j = 0; j < mapModel.mapDataArray.GetLength(1); j++)
+            {
+                Debug.Log("-----"+mapModel.mapDataArray[i][j]);
+            }
+        }
+       
     }
 }
 

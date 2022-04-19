@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 
 class InstanceManager
@@ -38,6 +39,7 @@ class InstanceManager
         else
         {
             T t = (T)Activator.CreateInstance(typeof(T));
+            
             instanceMap.Add(typeName, t);
             return t;
         }
