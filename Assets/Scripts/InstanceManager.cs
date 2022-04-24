@@ -38,6 +38,8 @@ class InstanceManager
         }
         else
         {
+
+            Debug.Log("---typeName---" + typeName+"----"+instanceMap.Count);
             T t = (T)Activator.CreateInstance(typeof(T));
             
             instanceMap.Add(typeName, t);

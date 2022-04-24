@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 class GameEntry : MonoBehaviour
 {
@@ -7,8 +8,8 @@ class GameEntry : MonoBehaviour
     public void Start()
     {
 
-
-        //Debug.Log("------"+ mapModel.mapDataArray.GetLength(0));
+        string str = File.ReadAllText(@"F:\052\PacMan\PacMan\Assets\Map");
+        Debug.Log("------"+ str);
 
         //for (int i = 0; i < mapModel.mapDataArray.GetLength(0); i++)
         //{
@@ -17,7 +18,7 @@ class GameEntry : MonoBehaviour
         //        Debug.Log("-----"+mapModel.mapDataArray[i][j]);
         //    }
         //}
-       
+
     }
 }
 
